@@ -1,0 +1,52 @@
+﻿@page
+@model RTSVolunteerSystem.Pages.Volunteers.IndexModel
+@{
+}
+
+<br>
+<h2>List of Volunteers</h2>
+<a class='btn btn-primary btn-sm' href='/Register/Index'>New Volunteer</a>
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Full Name</th>
+			<th>Email</th>
+			<th>Password</th>
+			<th>Phone</th>
+			<th>Address</th>
+			<th>Emergency Contact Name</th>
+			<th>Emergency Contact Phone</th>
+			<th>Date of Birth</th>
+			<th>Available From</th>
+			<th>Available To</th>
+			<th>Comments</th>
+			<th>Created At</th>
+			<!--<th>Action</th>-->
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.listVolunteers)
+		{
+			<tr>
+				<td>@item.id</td>
+				<td>@item.fullname</td>
+				<td>@item.email</td>
+				<td>@item.password</td>
+				<td>@item.phone</td>
+				<td>@item.address</td>
+				<td>@item.ecname</td>
+				<td>@item.ecphone</td>
+				<td>@item.dob</td>
+				<td>@item.availablefrom</td>
+				<td>@item.availableto</td>
+				<td>@item.comments</td>
+				<td>@item.created_at</td>
+				<!--<td>
+					<a class="btn btn-primary btn-sm" href="/Clients/Edit?id=@item.id">Edit</a>
+					<a class="btn btn-danger btn-sm" href="/Clients/Delete?id=@item.id">Delete</a>
+				</td>-->
+			</tr>
+		}
+	</tbody>
+</table>
