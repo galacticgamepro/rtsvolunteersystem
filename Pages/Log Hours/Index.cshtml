@@ -1,0 +1,69 @@
+﻿@page
+@model RTSVolunteerSystem.Pages.Log_Hours.IndexModel
+@{
+}
+
+<br>
+<h2>Log Hours</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissable fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aris-label="Close"></button>
+    </div>
+}
+
+<form method="POST">
+    <input type="hidden" name="volunteerID" value="@Model.hoursInfo.volunteerID">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Date</label>
+        <div class="col-sm-6">
+            <input type="date" class="form-control" name="date" value="@Model.hoursInfo.date">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Team Name</label>
+        <div class="col-sm-6">
+            <select id="teamnameselect" name="teamname" value="@Model.hoursInfo.teamname" runat="server">
+                <option value="Events">Events</option>
+                <option value="Logistics">Logistics</option>
+                <option value="e">e</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Hours</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="hours" value="@Model.hoursInfo.hours">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Description</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="description" value="@Model.hoursInfo.description">
+        </div>
+    </div>
+
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class="alert alert-success alert-dismissable fade show" role="alert">
+                    <strong>@Model.successMessage</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/Index" role="button">Cancel</a>
+        </div>
+    </div>
+</form>

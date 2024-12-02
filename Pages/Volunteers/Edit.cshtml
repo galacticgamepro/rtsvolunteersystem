@@ -1,0 +1,100 @@
+﻿@page
+@model RTSVolunteerSystem.Pages.Volunteers.EditModel
+@{
+}
+
+<br>
+<h2>Edit Volunteer</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissable fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aris-label="Close"></button>
+    </div>
+}
+
+<form method="POST">
+    <input type="hidden" name="id" value="@Model.volunteerInfo.id">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Full Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="fullname" value="@Model.volunteerInfo.fullname">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="email" value="@Model.volunteerInfo.email">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Phone</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="phone" value="@Model.volunteerInfo.phone">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Address</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="address" value="@Model.volunteerInfo.address">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Emergency Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="ecname" value="@Model.volunteerInfo.ecname">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Emergency Phone</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="ecphone" value="@Model.volunteerInfo.ecphone">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Date of Birth</label>
+        <div class="col-sm-6">
+            <input type="date" class="form-control" name="dob" value="@DateTime.Parse(Model.volunteerInfo.dob).ToString("yyyy-MM-dd")">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Available From</label>
+        <div class="col-sm-6">
+            <input type="date" class="form-control" name="availablefrom" value="@DateTime.Parse(Model.volunteerInfo.availablefrom).ToString("yyyy-MM-dd")">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Available To</label>
+        <div class="col-sm-6">
+            <input type="date" class="form-control" name="availableto" value="@DateTime.Parse(Model.volunteerInfo.availableto).ToString("yyyy-MM-dd")">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Comments</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="comments" value="@Model.volunteerInfo.comments">
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class="alert alert-success alert-dismissable fade show" role="alert">
+                    <strong>@Model.successMessage</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/Volunteers/Index" role="button">Cancel</a>
+        </div>
+    </div>
+</form>

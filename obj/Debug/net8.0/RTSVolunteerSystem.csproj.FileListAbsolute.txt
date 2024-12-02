@@ -70,3 +70,5 @@ C:\Users\krith\source\repos\RTSVolunteerSystem\RTSVolunteerSystem\bin\Debug\net8
 C:\Users\krith\source\repos\RTSVolunteerSystem\RTSVolunteerSystem\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\krith\source\repos\RTSVolunteerSystem\RTSVolunteerSystem\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
 C:\Users\krith\source\repos\RTSVolunteerSystem\RTSVolunteerSystem\obj\Debug\net8.0\RTSVolun.3542ABC0.Up2Date
+C:\Users\krith\source\repos\RTSVolunteerSystem\RTSVolunteerSystem\obj\Debug\net8.0\RTSVolunteerSystem.sourcelink.json
+C:\Users\krith\source\repos\RTSVolunteerSystem\RTSVolunteerSystem\bin\Debug\net8.0\web.config

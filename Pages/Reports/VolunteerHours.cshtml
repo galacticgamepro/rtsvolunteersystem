@@ -1,0 +1,32 @@
+﻿@page
+@model RTSVolunteerSystem.Pages.Reports.VolunteerHourscshtmlModel
+@{
+}
+
+<br>
+<h2>List of Hours</h2>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Volunteer Name</th>
+			<th>Date</th>
+			<th>Team Name</th>
+			<th>Hours</th>
+			<th>Description</th>
+			<th>Created At</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.listHours)
+		{
+			<tr>
+				<td>@item.volunteername</td>
+				<td>@item.date</td>
+				<td>@item.teamname</td>
+				<td>@item.hours</td>
+				<td>@item.description</td>
+				<td>@item.created_at</td>
+			</tr>
+		}
+	</tbody>
+</table>

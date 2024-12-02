@@ -22,7 +22,7 @@
 			<th>Available To</th>
 			<th>Comments</th>
 			<th>Created At</th>
-			<!--<th>Action</th>-->
+			<th>Action</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -42,10 +42,10 @@
 				<td>@item.availableto</td>
 				<td>@item.comments</td>
 				<td>@item.created_at</td>
-				<!--<td>
-					<a class="btn btn-primary btn-sm" href="/Clients/Edit?id=@item.id">Edit</a>
-					<a class="btn btn-danger btn-sm" href="/Clients/Delete?id=@item.id">Delete</a>
-				</td>-->
+				<td>
+					<a class="btn btn-primary btn-sm" href="/Volunteers/Edit?id=@item.id">Edit</a>
+					<a class="btn btn-danger btn-sm" href="/Volunteers/Delete?id=@item.id">Delete</a>
+				</td>
 			</tr>
 		}
 	</tbody>

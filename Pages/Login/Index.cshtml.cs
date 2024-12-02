@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Data.SqlClient;
 using RTSVolunteerSystem.Pages.Register;
+using System.Configuration;
 
 namespace RTSVolunteerSystem.Pages.Login
 {
@@ -48,6 +49,11 @@ namespace RTSVolunteerSystem.Pages.Login
                                 errorMessage = "Please provide correct email and/or password";
                                 return;
                             }
+                            else
+                            {
+                                volunteerInfo.id = "" + reader.GetInt32(0);
+                                volunteerInfo.fullname = reader.GetString(1);
+                            }
                         }
                     }
                 }
@@ -61,8 +67,9 @@ namespace RTSVolunteerSystem.Pages.Login
             successMessage = "Logged In Successfully";
             CookieOptions cookies = new CookieOptions();
             cookies.Expires = DateTime.Now.AddDays(5);
+            Response.Cookies.Append("id", volunteerInfo.id, cookies);
+            Response.Cookies.Append("fullname", volunteerInfo.fullname, cookies);
             Response.Cookies.Append("email", volunteerInfo.email, cookies);
-            Response.Cookies.Append("password", volunteerInfo.password, cookies);
             volunteerInfo.email = "";
             volunteerInfo.password = "";
             

@@ -1,0 +1,40 @@
+﻿@page
+@model RTSVolunteerSystem.Pages.Teams.IndexModel
+@{
+}
+
+<br>
+<h2>List of Teams</h2>
+<a class='btn btn-primary btn-sm' href='/Teams/Create'>New Team</a>
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Team Name</th>
+			<th>Contact Name</th>
+			<th>Contact Email</th>
+			<th>Contact Phone</th>
+			<th>Description</th>
+			<th>Created At</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.listTeams)
+		{
+			<tr>
+				<td>@item.id</td>
+				<td>@item.teamname</td>
+				<td>@item.contactname</td>
+				<td>@item.contactemail</td>
+				<td>@item.contactphone</td>
+				<td>@item.description</td>
+				<td>@item.created_at</td>
+				<td>
+					<a class="btn btn-primary btn-sm" href="/Teams/Edit?id=@item.id">Edit</a>
+					<a class="btn btn-danger btn-sm" href="/Teams/Delete?id=@item.id">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
